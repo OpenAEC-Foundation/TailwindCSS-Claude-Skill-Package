@@ -10,7 +10,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: {{BG_COLOR}};
+    background: #0F172A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@
   .banner {
     width: 1280px;
     height: 640px;
-    background: {{BG_COLOR}};
+    background: #0F172A;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -33,7 +33,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, {{BRAND_PRIMARY}} 0%, {{BRAND_SECONDARY}} 50%, {{BRAND_ACCENT}} 100%);
+    background: linear-gradient(90deg, #0EA5E9 0%, #06B6D4 50%, #38BDF8 100%);
   }
 
   /* Subtle blueprint grid */
@@ -73,7 +73,7 @@
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: {{BRAND_PRIMARY}};
+    color: #0EA5E9;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 22px;
@@ -106,9 +106,9 @@
     border: 2px solid;
   }
 
-  .badge-1 { border-color: {{BRAND_PRIMARY}};   color: {{BRAND_PRIMARY}}; }
-  .badge-2 { border-color: {{BRAND_SECONDARY}}; color: {{BRAND_SECONDARY}}; }
-  .badge-3 { border-color: {{BRAND_ACCENT}};    color: {{BRAND_ACCENT}}; }
+  .badge-1 { border-color: #0EA5E9;   color: #0EA5E9; }
+  .badge-2 { border-color: #06B6D4; color: #06B6D4; }
+  .badge-3 { border-color: #38BDF8;    color: #38BDF8; }
 
   .versions {
     font-family: 'JetBrains Mono', monospace;
@@ -181,16 +181,16 @@
   }
 
   .comment  { color: #A1A1AA; }
-  .keyword  { color: {{BRAND_PRIMARY}}; }
-  .function { color: {{BRAND_SECONDARY}}; }
+  .keyword  { color: #0EA5E9; }
+  .function { color: #06B6D4; }
   .string   { color: #34D399; }
-  .operator { color: {{BRAND_ACCENT}}; }
+  .operator { color: #38BDF8; }
   .type     { color: #3178C6; }
   .cursor {
     display: inline-block;
     width: 8px;
     height: 17px;
-    background: {{BRAND_PRIMARY}};
+    background: #0EA5E9;
     vertical-align: text-bottom;
   }
 
@@ -211,7 +211,7 @@
   }
 
   .foundation-name .open { color: #FAFAF9; }
-  .foundation-name .aec  { color: {{BRAND_PRIMARY}}; }
+  .foundation-name .aec  { color: #0EA5E9; }
 
   .foundation-sub {
     font-family: 'Inter', system-ui, sans-serif;
@@ -228,18 +228,18 @@
 
     <!-- Left: text content -->
     <div class="left">
-      <div class="number">0</div>
+      <div class="number">30</div>
       <div class="title">Deterministic Skills</div>
-      <div class="subtitle">for {{TECH_TAGLINE}}</div>
+      <div class="subtitle">for Tailwind CSS v3.4 &#43; v4.0</div>
 
       <div class="badges">
-        <div class="badge badge-1">{{BADGE_1}}</div>
-        <div class="badge badge-2">{{BADGE_2}}</div>
-        <div class="badge badge-3">{{BADGE_3}}</div>
+        <div class="badge badge-1">v3.4 + v4.0</div>
+        <div class="badge badge-2">CSS + HTML</div>
+        <div class="badge badge-3">30 Skills</div>
       </div>
 
       <div class="versions">
-        {{VERSION_LINE}}
+        v3.4 (JIT) and v4.0 (Oxide, CSS-first)
       </div>
     </div>
 
@@ -250,12 +250,17 @@
           <div class="dot dot-red"></div>
           <div class="dot dot-yellow"></div>
           <div class="dot dot-green"></div>
-          <span class="code-filename">{{CODE_FILENAME}}</span>
+          <span class="code-filename">app.css</span>
         </div>
-        <div class="code-body">
-          {{CODE_BODY}}
-          <span class="cursor"></span>
-        </div>
+        <pre class="code-body"><span class="keyword">@import</span> <span class="string">"tailwindcss"</span>;
+
+<span class="keyword">@theme</span> {
+  <span class="operator">--color-brand-500</span>: <span class="function">oklch</span>(0.65 0.18 252);
+  <span class="operator">--font-display</span>: <span class="string">"Inter Variable"</span>;
+}
+
+<span class="keyword">@source</span> <span class="function">inline</span>(<span class="string">"bg-{red,blue}-500"</span>);
+<span class="keyword">@custom-variant</span> dark (<span class="function">&amp;:where</span>(.dark *));<span class="cursor"></span></pre>
       </div>
     </div>
 
@@ -271,18 +276,26 @@
 <!--
 TEMPLATE VARIABLES:
 ==================
-{{BG_COLOR}}         — Background color (e.g., #1A1A2E, #2A2A32)
-{{BRAND_PRIMARY}}    — Primary brand color (e.g., #61DAFB for React, #FFC131 for Tauri)
-{{BRAND_SECONDARY}}  — Secondary color (e.g., #3178C6 for TypeScript)
-{{BRAND_ACCENT}}     — Accent color (e.g., #A855F7 for purple)
+#0F172A         — Background color (e.g., #1A1A2E, #2A2A32)
+#0EA5E9    — Primary brand color (e.g., #61DAFB for React, #FFC131 for Tauri)
+#06B6D4  — Secondary color (e.g., #3178C6 for TypeScript)
+#38BDF8     — Accent color (e.g., #A855F7 for purple)
 0      — Number of skills (e.g., 24, 27)
-{{TECH_TAGLINE}}     — Short tagline (e.g., "expert-level React 18 & 19 development")
-{{BADGE_1}}          — First badge text (e.g., "React 18 + 19")
-{{BADGE_2}}          — Second badge text (e.g., "TypeScript")
-{{BADGE_3}}          — Third badge text (e.g., "18 Hooks")
-{{VERSION_LINE}}     — Version info with HTML separators using <span class="sep">│</span>
-{{CODE_FILENAME}}    — Filename in code window titlebar (e.g., "App.tsx", "lib.rs")
-{{CODE_BODY}}        — HTML-formatted code snippet using span classes: .comment, .keyword, .function, .string, .operator, .type
+Deterministic Claude skills for v3.4 &#43; v4.0     — Short tagline (e.g., "expert-level React 18 & 19 development")
+v3.4 + v4.0          — First badge text (e.g., "React 18 + 19")
+CSS + HTML          — Second badge text (e.g., "TypeScript")
+30 Skills          — Third badge text (e.g., "18 Hooks")
+v3.4 (JIT) and v4.0 (Oxide, CSS-first)     — Version info with HTML separators using <span class="sep">│</span>
+app.css    — Filename in code window titlebar (e.g., "App.tsx", "lib.rs")
+<span class="k">@import</span> <span class="s">"tailwindcss"</span>;
+
+<span class="k">@theme</span> {
+  <span class="v">--color-brand-500</span>: <span class="n">oklch</span>(0.65 0.18 252);
+  <span class="v">--font-display</span>: <span class="s">"Inter Variable"</span>;
+}
+
+<span class="k">@source</span> <span class="n">inline</span>(<span class="s">"bg-{red,blue}-500"</span>);
+<span class="k">@custom-variant</span> dark (<span class="n">&amp;:where</span>(.dark *));        — HTML-formatted code snippet using span classes: .comment, .keyword, .function, .string, .operator, .type
 
 BRAND COLOR REFERENCE:
 ====================
