@@ -1,0 +1,7 @@
+# OpenAI Codex skill discovery
+# https://platform.openai.com/docs/codex/skills
+name: tailwindcss-claude-skill-package
+description: >
+  0 deterministic Claude AI skills for Tailwind CSS v3.4-v4.
+  Deterministic Claude skills for Tailwind CSS v3.4 and v4 : utility classes, config, variants, plugins, JIT engine, migration
+skills_directory: ./skills/source

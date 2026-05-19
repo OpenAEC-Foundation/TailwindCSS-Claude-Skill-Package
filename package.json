@@ -1,0 +1,23 @@
+{
+  "name": "@openaec/tailwindcss-claude-skill-package",
+  "version": "1.0.0",
+  "description": "0 deterministic Claude AI skills for Tailwind CSS v3.4-v4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenAEC-Foundation/TailwindCSS-Claude-Skill-Package"
+  },
+  "homepage": "https://github.com/OpenAEC-Foundation/TailwindCSS-Claude-Skill-Package#readme",
+  "keywords": [
+    "agent-skills",
+    "agentskills",
+    "claude-skills",
+    "claude-code",
+    "tailwind",
+    "css","html","javascript",
+    "openaec"
+  ],
+  "agents": {
+    "skills": []
+  }
+}
