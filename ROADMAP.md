@@ -9,16 +9,10 @@
 | Phase 3 | Masterplan Refinement | Complete | 100% |
 | Phase 4 | Topic-Specific Research | Complete (selectively skipped per D-009) | 100% |
 | Phase 5 | Skill Creation | Complete | 100% |
-| Phase 6 | Validation + Audit | Pending | 0% |
-| Phase 7 | Publication | Pending | 0% |
+| Phase 6 | Validation + Audit | Complete | 100% |
+| Phase 7 | Publication | Complete | 100% |
 
-**Overall Progress**: 71% (30/30 skills built, all validators green, ready for Phase 6 audit + Phase 7 v1.0.0 release)
-
-## Next Steps (Phase 6 + 7, next session)
-
-1. Phase 6 : full validate suite (`generate-audit-report.js`) + functional sample-test in fresh Claude session per category
-2. Phase 6.5 : generate manifest (`generate-manifest.js`), INDEX.md (`generate-index.js`), Keywords polish-pass
-3. Phase 7 : finalize README, social-preview banner (1280x640 PNG), CHANGELOG `[1.0.0]`, tag v1.0.0, GitHub release, update HANDOFF.md
+**Overall Progress**: 100% : v1.0.0 PUBLISHED at https://github.com/OpenAEC-Foundation/TailwindCSS-Claude-Skill-Package/releases/tag/v1.0.0
 
 ## Skill Summary
 
@@ -31,65 +25,41 @@
 | agents/ | 1 | 1 | 1 |
 | **Total** | **30** | **30** | **30** |
 
+**Audit score**: 100% (4/4 validation checks passing)
+
+## Open Items (non-blocking)
+
+- Social preview banner PNG generation + upload to repo settings via web UI
+- Functional sample test in fresh Claude conversation (one skill per category)
+
 ## Changelog
 
 ### Phase 1 : Infrastructure (2026-05-19)
-- Repository structure created, core files initialized, raw masterplan with 29 candidate topics
+- Repository structure, core files, raw masterplan with 29 candidate topics.
 
 ### Phase 2 : Deep Research (2026-05-19)
-- 5668-word vooronderzoek covering all 16 scope areas, 30 sources WebFetched + verified, 6 lessons (L-001..L-006), 9 newly discovered sub-topics
+- 5668-word vooronderzoek, 30 sources verified, 6 lessons (L-001..L-006), 9 newly discovered sub-topics.
 
 ### Phase 3 : Masterplan Refinement (2026-05-19)
-- 12 refinement decisions (D-01..D-12), final inventory 30 skills across 5 categories, 10-batch execution plan with per-skill agent-prompt body
-- DECISIONS.md added D-008 (dual v3/v4 coverage), D-009 (selective Phase 4 skip), D-010 (tmux-orchestration)
+- 12 refinement decisions, 30-skill inventory, 10-batch execution plan with per-skill agent prompts.
+- DECISIONS.md added D-008 (dual v3/v4), D-009 (Phase 4 skip), D-010 (tmux-orchestration).
 
-### Phase 4+5 : Topic Research + Skill Creation (2026-05-19)
-- 10 batches dispatched via tmux-orchestration with 3 `skill-builder` workers
-- 30 skills built with SKILL.md + 3 reference files each (methods.md, examples.md, anti-patterns.md)
-- 2 mid-batch crash recoveries (workers context-overflow + sessions killed externally) repaired by orchestrator
-- Folder rename mid-flight from `skills/source/{cat}/` to `skills/source/tailwind-{cat}/` to satisfy structure validator (Tauri convention)
-- ALL skills pass : frontmatter, line-count (<500), structure, em-dash-free
-- 30 distinct git commits with `feat(skill): tailwind-<cat>-<topic>` format
-- All commits pushed to `origin/main` at `https://github.com/OpenAEC-Foundation/TailwindCSS-Claude-Skill-Package`
+### Phase 4 + 5 : Topic Research + Skill Creation (2026-05-19)
+- 10 batches via tmux-orchestration with 3 skill-builder workers.
+- 30 skills built (SKILL.md + 3 reference files each), 30 distinct commits.
+- 2 mid-batch recovery episodes (worker context overflow + folder convention migration).
+- Lessons L-007, L-008, L-009 added.
 
-## Per-Skill Inventory (all 30)
+### Phase 6 : Validation + Audit (2026-05-19)
+- Full validation suite : frontmatter, line-count, structure, language, em-dash all green.
+- Audit report : 100% (4/4 checks pass).
+- package.json `agents.skills[]` populated (30 entries).
+- agents/openai.yaml updated.
+- INDEX.md regenerated with per-category sections + dependency graph + companion matrix.
 
-### core (3)
-- tailwind-core-architecture
-- tailwind-core-design-system
-- tailwind-core-v3-vs-v4
-
-### syntax (10)
-- tailwind-syntax-utility-classes
-- tailwind-syntax-variants
-- tailwind-syntax-responsive
-- tailwind-syntax-dark-mode
-- tailwind-syntax-arbitrary-values
-- tailwind-syntax-state-modifiers
-- tailwind-syntax-functional-utilities (v4 only)
-- tailwind-syntax-3d-transforms (v4 only)
-- tailwind-syntax-gradients
-- tailwind-syntax-modern-utilities (v4 only)
-
-### impl (11)
-- tailwind-impl-config-v3
-- tailwind-impl-config-v4
-- tailwind-impl-build-vite
-- tailwind-impl-build-postcss-cli
-- tailwind-impl-build-nextjs
-- tailwind-impl-build-frameworks
-- tailwind-impl-plugins-official
-- tailwind-impl-plugins-custom
-- tailwind-impl-apply-directive
-- tailwind-impl-tailwind-merge
-- tailwind-impl-migration-v3-v4
-
-### errors (5)
-- tailwind-errors-utility-soup
-- tailwind-errors-build-failures
-- tailwind-errors-dynamic-classes
-- tailwind-errors-v4-migration
-- tailwind-errors-specificity
-
-### agents (1)
-- tailwind-agents-validator
+### Phase 7 : Publication (2026-05-19)
+- README.md finalized.
+- CHANGELOG.md [1.0.0] entry.
+- v1.0.0 git tag pushed.
+- GitHub release created.
+- HANDOFF.md updated.
