@@ -39,3 +39,30 @@ Source : https://tailwindcss.com/docs/upgrade-guide sections 5 and 6
 The "I built a `bg-${color}-500` template helper and now nothing works in production" pattern is the most reported issue in the Tailwind tracker (issue 18136 is the canonical v4 instance, and the same class of problem dominates v3 issues too). The v4-specific solution `@source inline("{hover:,}bg-{red,blue,green}-{50,{100..900..100},950}")` is powerful but undocumented in most secondary sources. Every `errors-purge-issues` and `errors-build-failures` skill MUST cover : (a) why detection fails (plain-text token scan), (b) the static-map fix (preferred), (c) the inline-style fallback for truly runtime values, and (d) the `@source inline()` safelist with brace expansion as the v4 escape hatch. The v3 equivalent is the `safelist: [...]` config option, which is removed in v4.
 
 Source : https://github.com/tailwindlabs/tailwindcss/issues/18136 and https://tailwindcss.com/docs/detecting-classes-in-source-files
+
+
+## L-007 : Tmux worker context overflow causes silent kills
+
+Workers ran out of context after ~5 skills each batch (each skill consumed 30-50k tokens via mandatory reads + WebFetch + write). Claude REPL would exit without warning when context limit hit. Pattern : worker-1 hit 268k tokens at batch 3, then sessions disappeared by batch 5.
+
+Mitigation : (a) re-spawn workers between batches OR (b) explicit "stay idle, do not self-exit" hint in worker context bundle. Hint approach worked from batch 7 onwards. Future skill packages with >15 skills should bake this into the skill-builder role from day one.
+
+Source : direct observation during 30-skill Tailwind pkg build, 2026-05-19.
+
+## L-008 : Structure validator requires category-dir prefix on topic-dir name
+
+`validate-structure.js` enforces : every SKILL.md path must be `skills/source/<cat>/<cat>-<topic>/SKILL.md`. Bootstrap script created `skills/source/{core,syntax,impl,errors,agents}/` (Frappe convention) but masterplan named skills `tailwind-core-architecture` (Tauri convention). Validator rejected the cross-convention combination.
+
+Fix applied : renamed all category dirs to `tailwind-<cat>` (Tauri convention) mid-flight after batch 1. Future bootstrap scripts should default to Tauri convention OR validator should be made convention-agnostic.
+
+Source : direct validator failure during batch 1 QG, 2026-05-19.
+
+## L-009 : Keywords regex stops at first period inside any term
+
+`validate-frontmatter.js` matches `Keywords:\s*(.+?)(?:\.|$)/i` : stops at the first period. Listing `tailwind.config.js` as a keyword cuts the term list to just `tailwind` (1 term, fails >=4 requirement).
+
+Fix : write keywords without internal periods. `tailwind config js` (spaces) or `tailwind-config-js` (hyphens) instead of `tailwind.config.js`. Same for `Next.js` to `Next-js` or `Nextjs`.
+
+Bundle template now warns workers explicitly.
+
+Source : direct frontmatter validation failure during batch 5 QG (tailwind-impl-config-v3), 2026-05-19.
