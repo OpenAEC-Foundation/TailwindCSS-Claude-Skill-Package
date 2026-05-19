@@ -1,7 +1,7 @@
 {
   "name": "@openaec/tailwindcss-claude-skill-package",
   "version": "1.0.0",
-  "description": "0 deterministic Claude AI skills for Tailwind CSS v3.4-v4",
+  "description": "30 deterministic Claude AI skills for Tailwind CSS v3.4-v4",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,10 +14,133 @@
     "claude-skills",
     "claude-code",
     "tailwind",
-    "css","html","javascript",
+    "css",
+    "html",
+    "javascript",
     "openaec"
   ],
   "agents": {
-    "skills": []
+    "skills": [
+      {
+        "name": "tailwind-agents-validator",
+        "path": "./skills/source/tailwind-agents/tailwind-agents-validator"
+      },
+      {
+        "name": "tailwind-core-architecture",
+        "path": "./skills/source/tailwind-core/tailwind-core-architecture"
+      },
+      {
+        "name": "tailwind-core-design-system",
+        "path": "./skills/source/tailwind-core/tailwind-core-design-system"
+      },
+      {
+        "name": "tailwind-core-v3-vs-v4",
+        "path": "./skills/source/tailwind-core/tailwind-core-v3-vs-v4"
+      },
+      {
+        "name": "tailwind-errors-build-failures",
+        "path": "./skills/source/tailwind-errors/tailwind-errors-build-failures"
+      },
+      {
+        "name": "tailwind-errors-dynamic-classes",
+        "path": "./skills/source/tailwind-errors/tailwind-errors-dynamic-classes"
+      },
+      {
+        "name": "tailwind-errors-specificity",
+        "path": "./skills/source/tailwind-errors/tailwind-errors-specificity"
+      },
+      {
+        "name": "tailwind-errors-utility-soup",
+        "path": "./skills/source/tailwind-errors/tailwind-errors-utility-soup"
+      },
+      {
+        "name": "tailwind-errors-v4-migration",
+        "path": "./skills/source/tailwind-errors/tailwind-errors-v4-migration"
+      },
+      {
+        "name": "tailwind-impl-apply-directive",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-apply-directive"
+      },
+      {
+        "name": "tailwind-impl-build-frameworks",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-build-frameworks"
+      },
+      {
+        "name": "tailwind-impl-build-nextjs",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-build-nextjs"
+      },
+      {
+        "name": "tailwind-impl-build-postcss-cli",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-build-postcss-cli"
+      },
+      {
+        "name": "tailwind-impl-build-vite",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-build-vite"
+      },
+      {
+        "name": "tailwind-impl-config-v3",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-config-v3"
+      },
+      {
+        "name": "tailwind-impl-config-v4",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-config-v4"
+      },
+      {
+        "name": "tailwind-impl-migration-v3-v4",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-migration-v3-v4"
+      },
+      {
+        "name": "tailwind-impl-plugins-custom",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-plugins-custom"
+      },
+      {
+        "name": "tailwind-impl-plugins-official",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-plugins-official"
+      },
+      {
+        "name": "tailwind-impl-tailwind-merge",
+        "path": "./skills/source/tailwind-impl/tailwind-impl-tailwind-merge"
+      },
+      {
+        "name": "tailwind-syntax-3d-transforms",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-3d-transforms"
+      },
+      {
+        "name": "tailwind-syntax-arbitrary-values",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-arbitrary-values"
+      },
+      {
+        "name": "tailwind-syntax-dark-mode",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-dark-mode"
+      },
+      {
+        "name": "tailwind-syntax-functional-utilities",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-functional-utilities"
+      },
+      {
+        "name": "tailwind-syntax-gradients",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-gradients"
+      },
+      {
+        "name": "tailwind-syntax-modern-utilities",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-modern-utilities"
+      },
+      {
+        "name": "tailwind-syntax-responsive",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-responsive"
+      },
+      {
+        "name": "tailwind-syntax-state-modifiers",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-state-modifiers"
+      },
+      {
+        "name": "tailwind-syntax-utility-classes",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-utility-classes"
+      },
+      {
+        "name": "tailwind-syntax-variants",
+        "path": "./skills/source/tailwind-syntax/tailwind-syntax-variants"
+      }
+    ]
   }
 }
